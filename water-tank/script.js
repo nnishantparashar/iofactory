@@ -2,14 +2,14 @@ function getData() {
   var input = document.getElementById("input");
   var inputArr = input.value.split(",").map(Number);
 
-  var wallsWithWaterArr = getWallsAndWater(inputArr);
-  var waterOnlyArr = getWaterOnly(inputArr, wallsWithWaterArr);
-  var waterCount = getCount(waterOnlyArr);
+  var wallsWithWater = getWallsAndWater(inputArr);
+  var waterOnly = getWaterOnly(inputArr, wallsWithWater);
+  var waterCount = getCount(waterOnly);
 
-  var barsColor = getBarColor(inputArr, wallsWithWaterArr);
+  var barsColor = getBarColor(inputArr, wallsWithWater);
 
-  createBars(wallsWithWaterArr, barsColor, "#one");
-  createBars(waterOnlyArr, barsColor, "#two");
+  createBars(wallsWithWater, barsColor, "#one");
+  createBars(waterOnly, barsColor, "#two");
 
   document.getElementById("water").innerHTML += `<h3>
                     Total ${waterCount} Units of Water.
@@ -21,8 +21,8 @@ const getWallsAndWater = (arr) => {
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === 0) {
-      let left = getLeftWall(arr, i);
-      let right = getRightWall(arr, i);
+      let left = getNearestWall(arr, i, -1);
+      let right = getNearestWall(arr, i, 1);
 
       if (left !== null && right !== null) {
         result[i] = Math.min(left, right);
@@ -33,16 +33,8 @@ const getWallsAndWater = (arr) => {
   return result;
 };
 
-const getLeftWall = (arr, index) => {
-  for (let i = index - 1; i >= 0; i--) {
-    if (arr[i] !== 0) {
-      return arr[i];
-    }
-  }
-  return null;
-};
-const getRightWall = (arr, index) => {
-  for (let i = index + 1; i < arr.length; i++) {
+const getNearestWall = (arr, index, direction) => {
+  for (let i = index + direction; i >= 0 && i < arr.length; i += direction) {
     if (arr[i] !== 0) {
       return arr[i];
     }
@@ -51,44 +43,20 @@ const getRightWall = (arr, index) => {
 };
 
 const getWaterOnly = (wallsOnly, wallsAndWater) => {
-  var waterArray = [];
-
-  for (let i = 0; i < wallsOnly.length; i++) {
-    if (wallsOnly[i] !== wallsAndWater[i]) {
-      waterArray[i] = wallsAndWater[i];
-    } else {
-      waterArray[i] = 0;
-    }
-  }
-
-  return waterArray;
+  return wallsOnly.map((wall, i) =>
+    wall !== wallsAndWater[i] ? wallsAndWater[i] : 0
+  );
 };
 
 const getCount = (waterArray) => {
-  var totalWater = 0;
-
-  var totalWater = waterArray.reduce(function (total, currentNumber) {
-    return total + currentNumber;
-  }, 0);
-
-  return totalWater;
+  return waterArray.reduce((total, current) => total + current, 0);
 };
 
 const getBarColor = (arr1, arr2) => {
-  var colors = [];
-
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] - arr2[i] < 0) {
-      colors[i] = "#74ccf4";
-    } else {
-      colors[i] = "#c9b7b1";
-    }
-  }
-  return colors;
+  return arr1.map((wall, i) => (wall - arr2[i] < 0 ? "#74ccf4" : "#c9b7b1"));
 };
 
 const createBars = (dataArr, colorArr, id) => {
- 
   /*Format data */
   var dataSet = dataArr.map((value, index) => {
     return { key: index + 1, value: value };
