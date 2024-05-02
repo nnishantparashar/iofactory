@@ -1,0 +1,46 @@
+
+[
+    {
+      "Name": "Avatar",
+      "YearOfRelease": "2009",
+      "Producer": "James Cameron",
+      "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+      "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+      "Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg"
+   
+    },
+    {
+      "Name": "I Am Legend",
+      "YearOfRelease": "2007",
+      "Producer": "Francis Lawrence",
+      "Actors": "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
+      "Plot": "YearOfReleases after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure.",
+      "Poster": "http://ia.media-imdb.com/images/M/MV5BMTU4NzMyNDk1OV5BMl5BanBnXkFtZTcwOTEwMzU1MQ@@._V1_SX300.jpg"
+    },
+    {
+      "Name": "300",
+      "YearOfRelease": "2006",
+      "Producer": "Zack Snyder",
+      "Actors": "Gerard Butler, Lena Headey, Dominic West, David Wenham",
+      "Plot": "King Leonidas of Sparta and a force of 300 men fight the Persians at Thermopylae in 480 B.C.",
+      "Poster": "http://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg"
+   
+    },
+    {
+      "Name": "The Avengers",
+      "YearOfRelease": "2012",
+      "Producer": "Joss Whedon",
+      "Actors": "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth",
+      "Plot": "Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.",
+      "Poster": "http://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg"
+ 
+    },
+    {
+      "Name": "The Wolf of Wall Street",
+      "YearOfRelease": "2013",
+      "Producer": "Martin Scorsese",
+      "Actors": "Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey",
+      "Plot": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+      "Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
+    }
+  ]
